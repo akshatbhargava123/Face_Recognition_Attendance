@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Attendance Manager</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label>Select a Date:</ion-label>
+    <ion-datetime [(ngModel)]="selectedDate" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"></ion-datetime>
+  </ion-item>
+</ion-content>

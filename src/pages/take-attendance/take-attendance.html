@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Attendance Manager</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div padding text-center>
+    <button ion-button clear (click)="selectAvatar()">
+      {{ selectedGroupPhoto ? 'Selected!' : 'Click/Select Photo' }}
+    </button>
+    <input #avatar style="display: none" type="file" (change)="uploadFromFile($event)" />
+  </div>
+
+  <div text-center>
+    <strong ion-text color="primary">Status:</strong>  {{ processingStatus }}
+  </div>
+
+  <div padding></div>
+
+  <ion-list>
+    <ion-list-header color="primary">Student List</ion-list-header>
+    <ion-item *ngFor="let student of studentList; let i = index" color="{{ present[i] ? 'primary' : ''}}">
+      <ion-label>{{ student.name }}</ion-label>
+      <ion-checkbox [(ngModel)]="present[i]" color="primary" (change)="updatePresentCount()"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <div padding></div>
+
+  <button ion-button (click)="registerAttendance()" block>Register Attendance</button>
+
+</ion-content>

@@ -1,0 +1,21 @@
+Teacher:
+
+Students:
+	id: String
+	groupId: String
+	name: String
+
+StudentGroups:
+	id: String
+	userId: String
+	name: String
+
+Attendance:
+	date: String
+	studentId: String
+	studentGroupId: String
+
+..................................................................................................................................
+
+Home will show studentGroups and a button to add a student group.
+After adding a student group add it to db with blank student list 
